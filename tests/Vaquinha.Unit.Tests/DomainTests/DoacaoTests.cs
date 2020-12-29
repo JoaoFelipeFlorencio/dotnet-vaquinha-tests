@@ -41,8 +41,9 @@ namespace Vaquinha.Unit.Tests.DomainTests
         [Trait("Doacao", "Doacao_UsuarioAceitaPagarComTaxa_DoacaoValida")]
         public void Doacao_UsuarioAceitaPagarComTaxa_DoacaoValida()
         {
+            const bool EMAIL_INVALIDO = false;
             // Arrange
-            var doacao = _doacaoFixture.DoacaoValida(false,5,false,true);
+            var doacao = _doacaoFixture.DoacaoValida(EMAIL_INVALIDO, 5,false,true);
             doacao.AdicionarEnderecoCobranca(_enderecoFixture.EnderecoValido());
             doacao.AdicionarFormaPagamento(_cartaoCreditoFixture.CartaoCreditoValido());
 
